@@ -5,9 +5,9 @@ class Solution:
         for i in range(1,n+1):
             arr.append(i)
         
-        print(arr)
+        print(arr) 
 
-        pre = [0]*n
+        pre = [0]*n #creating a prefix array of length n to store the prefix sum of the arr
 
         pre[0] = arr[0]
         for i in range(1,n):
@@ -15,7 +15,7 @@ class Solution:
         
         print(pre)
 
-        post = [0]*n
+        post = [0]*n #creating a suffix array of length n to store the suffix sum of the arr
         post[-1] = arr[-1]
 
         for i in range(n-2,-1,-1):

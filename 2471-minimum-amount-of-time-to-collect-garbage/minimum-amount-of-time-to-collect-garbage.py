@@ -50,13 +50,6 @@ class Solution:
                 temp += sum(res[i])+sum(travel[0:len(res[i])-1])
         print(temp)
         return temp
-
-
-
-        
-
-
-
         
 
 

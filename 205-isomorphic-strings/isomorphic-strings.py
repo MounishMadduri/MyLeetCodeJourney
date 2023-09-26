@@ -2,18 +2,19 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
         # isomorphic means s should be replacesd with t and t should be replace with s
-        
+
         hm ={}
         for i in range(len(s)):
             if s[i] not in hm :
                 hm[s[i]] = t[i]
+            
         hm1 = {}
         for i in range(len(t)):
             if t[i] not in hm1:
                 hm1[t[i]] = s[i]
             
-        print(hm)
-        print(hm1)
+        # print(hm)
+        # print(hm1)
 
         res = ''
         for i in s:

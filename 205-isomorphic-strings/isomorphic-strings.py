@@ -1,6 +1,8 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         
+        # isomorphic means s should be replacesd with t and t should be replace with s
+        
         hm ={}
         for i in range(len(s)):
             if s[i] not in hm :
@@ -20,5 +22,5 @@ class Solution:
         res1 = ''
         for i in t:
             res1+=hm1[i]
-            
+
         return res == t and res1 == s

@@ -1,7 +1,6 @@
 class Solution:
     def countGoodSubstrings(self, s: str) -> int:
         
-        hs = set()
         k = 3
         c = 0
         l = 0

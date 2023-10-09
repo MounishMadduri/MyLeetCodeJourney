@@ -20,10 +20,9 @@ class Solution:
                 if hm_res == hm:
                     res.append(l)
                 
-                if s[l] in hm_res:
-                    hm_res[s[l]] -= 1
-                    if hm_res[s[l]] == 0:
-                        del hm_res[s[l]]
+                hm_res[s[l]] -= 1
+                if hm_res[s[l]] == 0:
+                    del hm_res[s[l]]
                 l += 1
 
         return res

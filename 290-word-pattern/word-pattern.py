@@ -1,27 +1,25 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
 
-        hm1 = {}
-
-        s = s.split(' ')
-
-        if len(pattern)!=len(s):
-            return False
-        for i, n in enumerate(pattern) :
-            if n in hm1:
-                if hm1[n] == s[i]:
-                    continue
-                else:
-                    return False
+        hs = set()
+        hm = {}
+        sList = s.split()
+        print(sList)
+        if len(pattern)!=len(sList):
+            return False 
+        for i in range(len(pattern)):
+            if pattern[i] not in hs:
+                hs.add(pattern[i])
+                hm[pattern[i]] = sList[i]
             
-            else:
-                if s[i] in set(hm1.values()):
-                    return False
-                hm1[n] = s[i]
-        return True
+        res = []
+        for i in pattern:
+            res.append(hm[i])
+        comp = ' '.join(res)
 
-        
-
+        if len(hm.values()) !=  len(set(hm.values())):
+            return False
+        return comp == s
         
 
 

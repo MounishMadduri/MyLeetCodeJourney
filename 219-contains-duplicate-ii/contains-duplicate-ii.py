@@ -1,31 +1,28 @@
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-
         hm = {}
-        for i, n in enumerate(nums):
-            if n in hm and abs(i - hm[n]) <= k:
-                return True
-            hm[n] = i
+
+        i = 0
+        j = 1
+        while j < len(nums):
+            if nums[i] not in hm:
+                hm[nums[i]] = i
+
+            if nums[j] not in hm:
+                i = j
+            else:
+                if abs(j - hm[nums[j]]) <= k:
+                    return True
+                else:
+                    hm[nums[j]] = j
+            j+=1
         return False
 
-        # hm = {}
+        # hs = set()
 
-        # for i, n  in enumerate(nums):
-        #     if n not in hm:
-        #         hm[n] = [i]
-        #     else:
-        #         hm[n].append(i)
-        # print(hm)
-
-        # for i in hm.values():
-        #     if len(i)>1:
-        #         x = 0
-        #         y = 1
-        #         while y<len(i):
-        #             if abs(i[x]-i[y])<=k:
-        #                 return True
-        #             else:
-        #                 x = y
-        #             y+=1
-        # return False
-
+        # i = 0
+        # j = 1
+        # while j<len(nums):
+        #     if nums[i] not in hs:
+        #         hs.add(nums[i])
+            

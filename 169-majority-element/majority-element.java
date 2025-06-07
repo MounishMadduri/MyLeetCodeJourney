@@ -10,8 +10,7 @@ class Solution {
             }
             int val = hm.get(i);
             hm.put(i,++val);
-        }
-        for(int i:nums){
+        
             if(hm.get(i)>n/2 ){
                 res = i;
             }

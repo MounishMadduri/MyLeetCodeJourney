@@ -2,21 +2,22 @@ class Solution {
     public int majorityElement(int[] nums) {
         
         HashMap<Integer, Integer> hm = new HashMap<>();
-        int n = nums.length;
-        int res = 0;
         for(int i:nums){
             if(!(hm.containsKey(i))){
-                hm.put(i,0);
+                hm.put(i,1);
             }
-            int val = hm.get(i);
-            hm.put(i,++val);
-        
-            if(hm.get(i)>n/2 ){
-                res = i;
+            else{
+                hm.put(i, hm.get(i)+1);
             }
         }
-
-        return res;
-
+        int max = 0;
+        int keyRes = 0;
+        for(int key:hm.keySet()){
+            if(hm.get(key)>max){
+                max = hm.get(key);
+                keyRes = key;
+            }
+        }
+        return keyRes;
     }
 }

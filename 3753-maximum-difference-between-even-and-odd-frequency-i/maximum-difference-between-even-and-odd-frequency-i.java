@@ -13,7 +13,7 @@ class Solution {
         System.out.println(hm);
 
         int maxOdd = 0;
-        int maxEve = 11111111;
+        int maxEve = Integer.MAX_VALUE;
         for(char ch:hm.keySet()){
             if((hm.get(ch)%2!=0)){
                 maxOdd = Math.max(maxOdd, hm.get(ch));

@@ -1,28 +1,30 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        StringBuffer res = new StringBuffer();
-
+        
+        StringBuilder word = new StringBuilder();
         for(int i=0;i<s.length();i++){
-            char currChar = s.charAt(i);
-            if(Character.isUpperCase(currChar) == true){
-                res.append(Character.toLowerCase(currChar));
-            }
-            else if(Character.isLetterOrDigit(currChar)){
-                res.append(currChar);
+            if(Character.isLetterOrDigit(s.charAt(i))){
+                char lowerCased = Character.toLowerCase(s.charAt(i));
+                word.append(lowerCased);
             }
         }
-            // System.out.println(res);
-        int l = 0;
-        int r = res.length()-1;
-        while(l<r){
-            if(res.charAt(l) == res.charAt(r)){
-                l++;
-                r--;
-            }
-            else{
+        String modWord = word.toString();
+        
+        int i =0;
+        int j=word.length()-1;
+
+        // if(word.length()==1){
+        //     return false;
+        // }
+        while(i<=j){
+            if(word.charAt(i) != word.charAt(j)){
                 return false;
             }
+            i++;
+            j--;
         }
         return true;
+
+
     }
 }

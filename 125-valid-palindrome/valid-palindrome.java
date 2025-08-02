@@ -13,9 +13,6 @@ class Solution {
         int i =0;
         int j=word.length()-1;
 
-        // if(word.length()==1){
-        //     return false;
-        // }
         while(i<=j){
             if(word.charAt(i) != word.charAt(j)){
                 return false;

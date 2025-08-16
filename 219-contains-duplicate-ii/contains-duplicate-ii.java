@@ -7,12 +7,7 @@ class Solution {
                 hm.put(nums[i], i);
             }
             else{
-                if(Math.abs(i-hm.get(nums[i]))<=k){
-                    return true;
-                }
-                else{
-                    hm.put(nums[i], i);
-                }
+                return true;
             }
         }
         System.out.println(hm);
@@ -20,7 +15,7 @@ class Solution {
 
         for(int j=k+1;j<nums.length;j++){
             hm.remove(nums[j-k-1]);
-            if(hm.containsKey(nums[j]) && Math.abs(j-hm.get(nums[j]))<=k ){
+            if(hm.containsKey(nums[j]) ){
                 return true;
             }
             else{

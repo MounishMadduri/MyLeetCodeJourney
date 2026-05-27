@@ -1,18 +1,14 @@
 class Solution {
     public int countSeniors(String[] details) {
-        
-
-        int count = 0;
-
-        for(String data:details){
-            String ageString = data.substring(11,13);
-            int age = Integer.parseInt(ageString);
-            System.out.println(age);
-            if(age>60){
-                count++;
+        int c=0;
+        String sub = "";
+        for(String s:details){
+            sub = s.substring(11,13);
+            if(Integer.parseInt(sub)>60){
+                c++;
             }
         }
-        return count;
+        return c;
 
     }
 }

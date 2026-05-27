@@ -1,10 +1,11 @@
 class Solution {
     public int lengthOfLastWord(String s) {
         
-        String[] splitArr = s.trim().split("\\s+");
-        // \\s - space and + means more spaces
+        String stripped = s.strip();
+        
+        String[] splitted = stripped.split(" ");
 
-        return splitArr[splitArr.length - 1].length();
+        return splitted[splitted.length-1].length();
 
     }
 }

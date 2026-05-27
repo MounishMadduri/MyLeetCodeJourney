@@ -5,7 +5,6 @@ class Solution {
         int max = arr[arr.length-1];
         for(int i=arr.length-2; i>=0;i--){
             res[i] = max;
-            System.out.println(res[i]);
             max = Math.max(max, arr[i]);
 
 

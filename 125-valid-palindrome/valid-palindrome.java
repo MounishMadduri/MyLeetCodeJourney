@@ -1,27 +1,25 @@
 class Solution {
     public boolean isPalindrome(String s) {
         
-        StringBuilder word = new StringBuilder();
+        StringBuilder str = new StringBuilder();
         for(int i=0;i<s.length();i++){
             if(Character.isLetterOrDigit(s.charAt(i))){
-                char lowerCased = Character.toLowerCase(s.charAt(i));
-                word.append(lowerCased);
+                str.append(Character.toLowerCase(s.charAt(i)));
             }
         }
-        String modWord = word.toString();
-        
-        int i =0;
-        int j=word.length()-1;
 
-        while(i<=j){
-            if(word.charAt(i) != word.charAt(j)){
+        int i=0;
+        int j=str.length()-1;
+
+        while(i<j){
+            if(str.charAt(i) == str.charAt(j)){
+                i++;j--;
+            }
+            else{
                 return false;
             }
-            i++;
-            j--;
         }
+        System.out.println(str);
         return true;
-
-
     }
 }

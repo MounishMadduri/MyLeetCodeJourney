@@ -1,25 +1,17 @@
 class Solution {
     public void moveZeroes(int[] nums) {
+        int i = 0; // Tracks the position for the next non-zero element
         
-        int i = 0;
-        int j = 1;
-        int temp;
-        while(j<nums.length){
-            if(nums[i] == 0 && nums[j]!=0){
-                temp = nums[i];
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != 0) {
+                // Swap elements at i and j
+                int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
-                j++;
+                
+                // Move the non-zero boundary forward
                 i++;
-            }
-            else if(nums[i] == 0 && nums[j]==0){
-                j++;
-            }
-            else{
-                i++;
-                j++;
             }
         }
-
     }
 }

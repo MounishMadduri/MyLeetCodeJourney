@@ -14,7 +14,6 @@ class Solution {
             if(!(hs.contains(s.charAt(right)))){
                 hs.add(s.charAt(right));
                 max = Math.max(max, hs.size());
-                System.out.println(max);
             }
         }
         return max;
